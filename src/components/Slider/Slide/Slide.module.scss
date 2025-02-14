@@ -1,0 +1,108 @@
+.sliderBg {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    z-index: -1;
+
+    color: #ffffff;
+}
+
+.imageItem {
+    // width: 130px;
+    // height: 130px;
+
+    margin-right: 30px;
+
+    object-fit: cover;
+
+    // border: 1px solid #ffffff;
+    // box-shadow: 0 0 1px;
+}
+
+.carouselItemInfo {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+
+    gap: 60px;
+    padding: 0 80px 300px;
+}
+
+.carouselItemTitle {
+    font-size: 84px;
+    font-weight: 800;
+    //
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+    @keyframes showContent {
+        to {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+    }
+}
+
+.carouselItemDescriptions {
+    font-size: 36px;
+    font-weight: 700;
+    background-color: #db9501;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.carouselItemLink {
+    background-color: #db9501;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    padding: 25px 40px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.carouselImage {
+    > img {
+        border-radius: 16px;
+    }
+}
+
+.isHiddenImage {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    max-width: -1px;
+    clip: rect(0 0 0 0);
+}
+
+.isCurrentImage {
+    // border-radius: 50%;
+    box-shadow: 0 0 3px 0.1px #ffffff;
+    width: 140px;
+    height: 140px;
+}
+
+.isBg {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: -2;
+
+    animation: fadeIn 1.5s;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
